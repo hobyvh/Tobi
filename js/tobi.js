@@ -93,6 +93,7 @@
         rtl: false, // TODO
         loop: false, // TODO
         autoplayVideo: false,
+        blurTargetId: '',
         theme: 'dark'
       }
 
@@ -649,6 +650,12 @@
       // Makes lightbox appear, too
       lightbox.setAttribute('aria-hidden', 'false')
 
+      // If blur target is set, apply to target
+      if (config.blurTargetId) {
+        var blurThis = document.getElementById(config.blurTargetId);
+        blurThis.classList.add('tobi__blur');
+      }
+
       // Update lightbox
       updateLightbox()
 
@@ -674,6 +681,12 @@
       if (config.hideScrollbar) {
         document.documentElement.classList.remove('tobi-is-open')
         document.body.classList.remove('tobi-is-open')
+      }
+
+      // If blur target is set, remove from target
+      if (config.blurTargetId) {
+        var blurThis = document.getElementById(config.blurTargetId);
+        blurThis.classList.remove('tobi__blur');
       }
 
       // Unbind events
