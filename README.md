@@ -225,6 +225,7 @@ The following options are available:
 | draggable | bool | true | Use dragging and touch swiping. |
 | threshold | number | 100 | Touch and mouse dragging threshold (in px). |
 | autoplayVideo | bool | false | Videos will automatically start playing as soon as they can do so without stopping to finish loading the data. |
+| blurTargetId | string | "" | Element ID name that will get 20px blur applied when lightbox activates (for iOS style background blurring) |
 
 ## API
 
